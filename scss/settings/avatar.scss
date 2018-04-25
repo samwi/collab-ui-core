@@ -1,0 +1,8 @@
+@import '../tools/functions/core';
+@import 'colors';
+@import 'core';
+
+$cui-avatar__font-size: rem-calc(14);
+$cui-avatar__line-height: rem-calc(19);
+$cui-avatar__size: rem-calc(40);
+$cui-avatar__class: '#{$cui}-avatar';

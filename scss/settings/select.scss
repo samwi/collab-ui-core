@@ -1,0 +1,31 @@
+/**
+* @category controls
+* @component select
+* @design collaboration-design
+*/
+@import 'core';
+@import 'inputs';
+@import 'colors';
+
+$cui-select__class: '#{$cui}-select';
+$cui-select-button__class: '#{$cui}-button--input';
+$cui-select-label__class: '#{$cui-select__class}__label';
+
+$cui-select-input__margin: (rem-calc(2) 0);
+$cui-select--children__border: (rem-calc(1) solid $black-08);
+$cui-select--children__box-shadow: (0 rem-calc(8) rem-calc(16) 0 $black-08);
+$cui-select__icon--size: rem-calc(16);
+$cui-select__icon--top: calc((#{$cui-input__height} - #{$cui-select__icon--size}) / 2);
+$cui-select__icon--right: $cui-input__padding-right;
+$cui-select__icon--disabled: $black-40;
+$cui-select__icon--disabled--dark: $white-40;
+
+// Button Settings
+$cui-select--input__background-color: $black-08;
+$cui-select--input__background-color--hover: $black-12;
+
+$cui-select--input__background-color--dark: $white-24;
+$cui-select--input__background-color--hover--dark: $white-32;
+
+$cui-select__color: $black-60 !default;
+$cui-select__color--dark: $white-60 !default;

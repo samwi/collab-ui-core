@@ -1,0 +1,114 @@
+@import '../../settings/core';
+@import '../../settings/inputs';
+
+@import './spacing-responsive';
+
+@mixin cui-input__help-text() {
+  margin-left: rem-calc(16);
+  font-size: rem-calc(14);
+  line-height: rem-calc(22);
+  color: $cui-input__font-color--help;
+
+  .#{$cui-dark-class} & {
+    color: $cui-input__font-color--help--dark;
+  }
+  @include vr-spacing(mb, .25);
+
+  span {
+    font-size: inherit;
+  }
+}
+
+.#{$cui-input__class}__help-text {
+  @include cui-input__help-text;
+}
+
+@mixin cui-input-color(
+  $color: $cui-input__font-color,
+  $color-disabled: $cui-input__font-color--disabled,
+  $color-placeholder: $cui-input__font-color--placeholder,
+  $color-read-only: $cui-input__font-color--read-only,
+  $background-color: $cui-input__background,
+  $background-color-disabled: $cui-input__background--disabled,
+  $background-color-hover: $cui-input__background--hover,
+  $border-color-focus: $cui-form-control__background-border--focus
+) {
+  
+  color: $color;
+  background-color: $background-color;
+
+  &::placeholder {
+    color: $color-placeholder;
+  }
+
+  &:hover,
+  &.hover {
+    background-color: $background-color-hover;
+  }
+
+  &:focus,
+  &.focus {
+    border-color: $border-color-focus;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $color-disabled;
+    background-color: $background-color-disabled;
+
+    &:hover {
+      background-color: $background-color-disabled;
+    }
+  }
+
+  &[readonly],
+  &.readonly {
+    color: $color-read-only;
+    background-color: $background-color-disabled;
+
+    &:hover {
+      background-color: $background-color-disabled;
+    }
+  }
+
+  .#{$cui-input__class}-group {
+    &.disabled {
+      .#{$cui-input__class}__label,
+      .#{$cui-input__class}__secondary-label-container
+       > .#{$cui-input__class}__secondary-label {
+        color: $color-disabled;
+      }
+    }
+  }
+}
+
+@mixin cui-input-group-color(
+  $background-color: $cui-input__background,
+  $border-color: transparent,
+  $border-color-focus: $cui-form-control__background-border--focus,
+  $background-color-hover: $cui-input__background--hover,
+  $color-message: $cui-input__font-color--help,
+  $border-width: 1px
+) {
+  input,
+  textarea,
+  select {
+    background-color: $background-color-hover;
+    border:$border-width solid $border-color;
+
+    &:focus {
+      border-color: $border-color-focus;
+    }
+    &:hover {
+      background-color: $background-color-hover;
+    }
+  }
+
+  .#{$cui-input__class}__messages {
+    color: $color-message;
+
+    &:before {
+      color: $color-message;
+    }
+  }
+}

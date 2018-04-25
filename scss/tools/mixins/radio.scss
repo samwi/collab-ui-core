@@ -1,0 +1,108 @@
+// Radio Button
+
+@mixin radiobuttonSetup($backgroundcolor, $bordercolor, $bordersize){
+   background: $backgroundcolor;
+   height: $radiobuttonSize;
+   width: $radiobuttonSize;
+   display:inline-block;
+   padding: 0 0 0 0px;
+   border: $bordersize solid $bordercolor;
+   @include border-radius(50%);
+}
+
+@mixin selectedSetup($backgroundcolor){
+    height:($radiobuttonSize/2);
+    width: ($radiobuttonSize/2);
+    background:$backgroundcolor;
+    margin-top: 4px;
+    margin-left: 4px;
+    @include border-radius(50%);
+}
+
+
+@mixin cui-radio-color(
+  $border-color: $cui-form-control__background-border--focus,
+  $background-color: $cui-form-control__background,
+  $background-color--hover: $cui-form-control__background--hover,
+  $background-color--checked: $cui-form-control__background--checked,
+  $background-color--checked-hover: $cui-form-control__background--checked-hover,
+  $label-color: $cui-form-control__label
+) {
+
+  .#{$cui-radio__class}__input {
+
+    // Base Radio - Not Selected
+
+    + .#{$cui-radio__class}__label {
+      color: $label-color;
+      &:before {
+        background-color: $background-color;
+      }
+
+      &:hover,
+      &.hover {
+        &:before {
+          background-color: $background-color--hover
+        }
+      }
+    } 
+
+    &:focus,
+    &.focus {
+      + .#{$cui-radio__class}__label {
+        &:before {
+          border: $cui-focus__size solid $border-color;
+        }
+      }
+    }
+
+    // Checked
+
+    &:checked {
+      + .#{$cui-radio__class}__label {
+        &:before {
+          background-color: $background-color--checked;
+        }
+
+        &:hover,
+        &.hover {
+          &:before {
+            background-color: $background-color--checked-hover;
+          }
+        }
+      }
+    }
+
+    // Disabled Settings
+
+    &:disabled,
+    &.disabled {
+      + .#{$cui-radio__class}__label {
+
+        &:hover,
+        &.hover {
+          &:before {
+            background-color: $background-color;
+          }
+        }
+      }
+
+      //--> Disabled--Checked/Indeterminate
+
+      &:checked {
+        + .#{$cui-radio__class}__label {
+          &:before {
+            background-color: $background-color--checked;
+          }
+
+          &:hover,
+          &.hover {
+            &:before {
+              background-color: $background-color--checked;
+            }
+          }
+        }
+      }
+    }
+  }
+}

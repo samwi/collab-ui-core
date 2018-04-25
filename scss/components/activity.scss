@@ -1,0 +1,70 @@
+/*
+* @category controls
+* @component activity
+* @design collaboration-design
+*/
+
+@import '../settings/buttons';
+@import '../tools/mixins/buttons';
+
+@include exports('cui-activity') {
+  .cui-button.cui-activity {
+    width: rem-calc(68);
+    height: rem-calc(68);
+    min-width: initial;
+    padding: 0;
+    font-size: rem-calc(28);
+    > * {
+      font-size: inherit;
+    }
+
+    &__chat {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--blue__backround-color, $bg-hover: $cui-button--blue__backround-color--hover, $bg-active: $cui-button--blue__backround-color--active, $border-color: $cui-button--blue__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--blue__backround-color--focus);
+    }
+
+    &__camera {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--green__backround-color, $bg-hover: $cui-button--green__backround-color--hover, $bg-active: $cui-button--green__backround-color--active, $border-color: $cui-button--green__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--green__backround-color--focus);
+    }
+
+    &__meetings {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--orange__backround-color, $bg-hover: $cui-button--orange__backround-color--hover, $bg-active: $cui-button--orange__backround-color--active, $border-color: $cui-button--orange__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--orange__backround-color--focus);
+    }
+
+    &__whiteboard {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--purple__backround-color, $bg-hover: $cui-button--purple__backround-color--hover, $bg-active: $cui-button--purple__backround-color--active, $border-color: $cui-button--purple__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--purple__backround-color--focus);
+    }
+
+    &__files {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--yellow__backround-color, $bg-hover: $cui-button--yellow__backround-color--hover, $bg-active: $cui-button--yellow__backround-color--active, $border-color: $cui-button--yellow__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--yellow__backround-color--focus);
+    }
+
+    &__share-screen {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--cyan__backround-color, $bg-hover: $cui-button--cyan__backround-color--hover, $bg-active: $cui-button--cyan__backround-color--active, $border-color: $cui-button--cyan__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--cyan__backround-color--focus);
+    }
+
+    &__tasks {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--mint__backround-color, $bg-hover: $cui-button--mint__backround-color--hover, $bg-active: $cui-button--mint__backround-color--active, $border-color: $cui-button--mint__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--mint__backround-color--focus);
+    }
+
+    &--large {
+      width: rem-calc(84);
+      height: rem-calc(84);
+      font-size: rem-calc(36);
+    }
+
+    > span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+

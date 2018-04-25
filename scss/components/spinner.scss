@@ -1,0 +1,121 @@
+/**
+* @name Spinners States
+*
+* @category communication
+* @component loader-spinner
+* @section states
+* @hidecode true
+*
+* @html
+  <div class="docs-example docs-example--spacing">
+    <h3>Default <code class="small">.cui-spinner</code></h3>
+    <i class="cui-spinner"></i>
+  </div>
+  <div class="docs-example docs-example--spacing">
+    <h3>Default <code class="small">.cui-spinner .cui-spinner--20</code></h3>
+    <i class="cui-spinner cui-spinner--20"></i>
+  </div>
+  <div class="docs-example docs-example--spacing">
+    <h3>Default <code class="small">.cui-spinner .cui-spinner--28</code></h3>
+    <i class="cui-spinner cui-spinner--28"></i>
+  </div>
+  <div class="docs-example docs-example--spacing">
+    <h3>Default <code class="small">.cui-spinner .cui-spinner--36</code></h3>
+    <i class="cui-spinner cui-spinner--36"></i>
+  </div>
+  <div class="docs-example docs-example--spacing">
+    <h3>Blue <code class="small">.cui-spinner .cui-spinner--blue</code></h3>
+    <i class="cui-spinner cui-spinner--blue"></i>
+  </div>
+  <div class="docs-example docs-example--spacing">
+    <h3>Blue <code class="small">.cui-spinner .cui-spinner--blue .cui-spinner--20</code></h3>
+    <i class="cui-spinner cui-spinner--blue cui-spinner--20"></i>
+  </div>
+  <div class="docs-example docs-example--spacing">
+    <h3>Blue <code class="small">.cui-spinner .cui-spinner--blue .cui-spinner--28</code></h3>
+    <i class="cui-spinner cui-spinner--blue cui-spinner--28"></i>
+  </div>
+  <div class="docs-example docs-example--spacing">
+    <h3>Blue <code class="small">.cui-spinner .cui-spinner--blue .cui-spinner--36</code></h3>
+    <i class="cui-spinner cui-spinner--blue cui-spinner--36"></i>
+  </div>
+*
+*
+*/
+
+@import '../tools/functions/core';
+@import '../settings/spinner';
+@import '../tools/mixins/spinner';
+
+@include exports('cui-spinner') {
+  // Default styles applied outside of media query
+  %#{$cui-spinner__class},
+  .#{$cui-spinner__class}
+  {
+    border-radius: 50%;
+    position: relative;
+    margin: 2px;
+    display: inline-block;
+    @include cui-spinner-style($cui-spinner--gray__border-color, $cui-spinner-progress--black__border-color, transparent);
+    @include cui-spinner-size($cui-spinner__width, $cui-spinner__height);
+     &:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      text-indent: -9999em;
+      animation: load8 1s infinite linear;
+      top: -2px;
+      left: -2px;
+
+      @-webkit-keyframes load8 {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes load8 {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+     }
+
+     &--20
+     {
+      @extend .#{$cui-spinner__class};
+      @include cui-spinner-size($cui-spinner--20__width, $cui-spinner--20__height);
+     }
+
+     &--28
+     {
+      @extend .#{$cui-spinner__class};
+      @include cui-spinner-size($cui-spinner--28__width, $cui-spinner--28__height);
+     }
+
+     &--36
+     {
+      @extend .#{$cui-spinner__class};
+      @include cui-spinner-size($cui-spinner--36__width, $cui-spinner--36__height);
+     }
+
+     &--blue
+     {
+      @include cui-spinner-style($cui-spinner--blue__border-color, $cui-spinner-progress--blue__border-color, transparent);
+     }
+
+     .#{$cui-dark-class} & {
+      @include cui-spinner-style($cui-spinner--gray__border-color, $cui-spinner-progress--white__border-color, transparent);
+     }
+   }
+  }
+
+// TODO: Remove depreciated Symphony, Foundation and Bootstrap selectors after converting in Atlas
+.icon-spinner {
+    @extend %#{$cui-spinner__class};
+    @extend %#{$cui-spinner__class}--blue;
+  }

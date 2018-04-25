@@ -1,0 +1,109 @@
+@import '../settings/checkboxes';
+@import '../settings/colors';
+@import '../settings/core';
+@import '../settings/event-overlay';
+@import '../settings/inputs';
+@import '../settings/radios';
+@import '../settings/toggle-switch';
+@import '../settings/z-index';
+
+@import '../tools/functions/core';
+
+@import '../tools/mixins/input';
+@import '../tools/mixins/checkbox';
+@import '../tools/mixins/radio';
+@import '../tools/mixins/toggle-switch';
+
+@include exports('cui-event-overlay') {
+  .#{$cui}-event-overlay {
+    position: fixed;
+    z-index: $zindex-top-bar-fixed - 5;
+    &__children {
+      background: $white;
+      border-radius: 5px;
+      border: $cui-event-overlay__border;
+      box-shadow: $cui-event-overlay__shadow;
+      position: fixed;
+      z-index: $zindex-top-bar-fixed - 4;
+      display: flex;
+      overflow: auto;
+
+      .#{$cui-dark-class} & {
+        .#{$cui-checkbox__class} {
+          @include cui-checkbox-color;
+        }
+        .#{$cui-radio__class} {
+          @include cui-radio-color;
+        }
+        .#{$cui-input__class} {
+          @include cui-input-color;
+        }
+        .#{$cui-toggle-switch__class} {
+          @include cui-toggle-switch-color;
+        }
+      }
+    }
+
+    &__arrow {
+      position: fixed;
+      z-index: $zindex-top-bar-fixed - 3;
+
+      .#{$cui}-event-overlay--top > & {
+        margin-top: -$cui-event-overlay-arrow__height;
+        margin-left: -$cui-event-overlay-arrow__width / 2;
+
+        border-left: $cui-event-overlay-arrow__width / 2 solid transparent;
+        border-right: $cui-event-overlay-arrow__width / 2 solid transparent;
+        border-top: $cui-event-overlay-arrow__height solid $white;
+        filter: drop-shadow(0px 1px 1px $black-16);
+      }
+
+      .#{$cui}-event-overlay--left > & {
+        margin-top: -$cui-event-overlay-arrow__width / 2;
+        margin-left: -$cui-event-overlay-arrow__height;
+
+        border-top: $cui-event-overlay-arrow__width / 2 solid transparent;
+        border-bottom: $cui-event-overlay-arrow__width / 2 solid transparent;
+        border-left: $cui-event-overlay-arrow__height solid $white;
+        filter: drop-shadow(1px 0px 1px $black-16);
+      }
+
+      .#{$cui}-event-overlay--right > & {
+        margin-top: -$cui-event-overlay-arrow__width / 2;
+        border-top: $cui-event-overlay-arrow__width / 2 solid transparent;
+
+        border-bottom: $cui-event-overlay-arrow__width / 2 solid transparent;
+        border-right: $cui-event-overlay-arrow__height solid $white;
+        filter: drop-shadow(-1px 0px 1px $black-16);
+      }
+
+      .#{$cui}-event-overlay--bottom > & {
+        margin-left: -$cui-event-overlay-arrow__width / 2;
+        border-left: $cui-event-overlay-arrow__width / 2 solid transparent;
+
+        border-right: $cui-event-overlay-arrow__width / 2 solid transparent;
+        border-bottom: $cui-event-overlay-arrow__height solid $white;
+        filter: drop-shadow(0px -1px 1px $black-16);
+      }
+    }
+
+    &--arrow {
+      &.#{$cui}-event-overlay--top > .#{$cui}-event-overlay__children {
+        margin-top: -$cui-event-overlay-arrow__height + 1;
+      }
+
+      &.#{$cui}-event-overlay--bottom > .#{$cui}-event-overlay__children {
+        margin-top: $cui-event-overlay-arrow__height - 1 ;
+      }
+
+      &.#{$cui}-event-overlay--right > .#{$cui}-event-overlay__children {
+        margin-left: $cui-event-overlay-arrow__height - 1;
+      }
+
+      &.#{$cui}-event-overlay--left > .#{$cui}-event-overlay__children {
+        margin-left: -$cui-event-overlay-arrow__height + 1;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,32 @@
+/*
+* @category containers
+* @component modal
+* @design collaboration-design
+*/
+
+@import '../settings/core';
+@import '../settings/colors';
+@import '../settings/fonts';
+
+$cui-modal-overlay__background: rgba($black, .45) !default;
+
+// We use these to control the style of the modal itself.
+$cui-modal__background: $white !default;
+$cui-modal__top: rem-calc(100) !default;
+$cui-modal__width: 80% !default;
+$cui-modal__max-width: $row-width !default;
+$cui-modal__padding: rem-calc(30) !default;
+$cui-modal__box-shadow: 0 0 10px rgba($black,.4) !default;
+
+// We use this to set the default radius used throughout the core.
+$cui-modal__radius: $global-radius !default;
+
+// We use these to control the modal border
+$cui-modal__border-style: solid !default;
+$cui-modal__border-width: 1px !default;
+$cui-modal__border-color: $steel !default;
+$cui-modal__class: #{$cui}-modal;
+
+$cui-modal-dialog__padding: rem-calc(25);
+$cui-modal-dialog__border: 1px solid $black-12;
+$cui-modal-dialog__box-shadow: 0 8px 16px 0 $black-08;

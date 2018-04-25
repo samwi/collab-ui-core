@@ -1,0 +1,16 @@
+@import '../settings/colors';
+@import '../settings/core';
+
+$cui-alert-banner__font-size: rem-calc(14);
+$cui-alert-banner__padding: rem-calc(12);
+$cui-alert-banner-column__border: 1px solid transparent;
+
+$cui-alert-banner-info__color: $blue-dark;
+$cui-alert-banner-info__background: $blue-pastel;
+
+$cui-alert-banner-warning__color: $yellow-dark;
+$cui-alert-banner-warning__background: $yellow-pastel;
+
+
+$cui-alert-banner-error__color: $red-dark;
+$cui-alert-banner-error__background: $red-pastel;

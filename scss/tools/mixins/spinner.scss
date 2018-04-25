@@ -1,0 +1,44 @@
+/*
+* @category communication
+* @component loader-spinner
+* @design collaboration-design
+*/
+
+@import 'core';
+
+/*
+* @category communication
+* @component loader-spinner
+* @mixin cui-spinner-size
+* @description set spinner size.
+*
+* @scss
+* &#64;include cui-spinner-size($width, $height);
+*/
+@mixin cui-spinner-size($width: 1em, $height: 1em) {
+  width: $width;
+  height: $height;
+  &:after {
+    width: calc(#{$width} + 2px);
+    height: calc(#{$height} + 2px);
+  }
+}
+
+/*
+* @category communication
+* @component loader-spinner
+* @mixin cui-spinner-style
+* @description set Spinner border styles
+*
+* @scss
+* &#64;include cui-spinner-style($border, $border-progress-left, $border-progress);
+*/
+@mixin cui-spinner-style($border: $gray-4, $border-progress-left: $blue-base, $border-progress: transparent) {
+    border: 1px solid $border;
+    &:after {
+      border-top: 2px solid $border-progress;
+      border-right: 2px solid $border-progress;
+      border-bottom: 2px solid $border-progress;
+      border-left: 2px solid $border-progress-left;
+    }
+}

@@ -1,0 +1,27 @@
+/**
+* @category controls
+* @component slider
+*/
+@import 'core';
+@import 'colors';
+
+$cui-slider__class: #{$cui}-slider;
+
+$cui-slider-selection__background-color: $blue-base;
+$cui-slider-selection__background-color--disabled: $gray-5;
+$cui-slider-selection__background-color--disabled--dark: $white;
+$cui-slider-selection__background-color--red: $red-base;
+$cui-slider-selection__background-color--green: $green-base;
+$cui-slider-selection__background-color--yellow: $yellow-base;
+
+$cui-slider-pointer__background-color: $white;
+$cui-slider-pointer__background-color--hover: $blue-pastel;
+$cui-slider-pointer__background-color--focus--dark: $gray-4;
+$cui-slider-pointer__background-color--disabled: $gray-7;
+$cui-slider-pointer__background-color--disabled--dark: $gray-4;
+
+$cui-slider-bar__background-color: $gray-7;
+$cui-slider-bar__background-color--dark: $gray-4;
+
+$cui-slider-hashlabel__color: $gray-1;
+$cui-slider-hashlabel__color--dark: $white;

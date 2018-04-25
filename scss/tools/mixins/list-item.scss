@@ -1,0 +1,188 @@
+@import '../../settings/avatar';
+@import '../../settings/fonts';
+@import '../../settings/form-controls';
+@import '../../settings/focus';
+@import '../../settings/list-item';
+
+@import 'avatar';
+@import 'flex';
+
+@mixin cui-list-item-section(
+  $order: 0,
+  $margin-left: 0,
+  $margin-right: 0,
+  $flex-grow: 1,
+  $flex-shrink: 1,
+  $flex-basis: auto
+) {
+  @include flex();
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+  order: 0;
+  flex: $flex-grow $flex-shrink $flex-basis;
+  height: 100%;
+}
+
+@mixin cui-list-item(
+  $padding: $cui-list-item__padding,
+  $height: $cui-list-item__height,
+  $section-margin: $cui-list-item__section-margin-side,
+  $avatar-size: $cui-list-item__avatar__dimension,
+  $background-color: $cui-list-item__background,
+  $color:$cui-form-control__label,
+  $hover-bgrd-color: $cui-list-item__background--hover,
+  $active-bgrd-color:$cui-list-item__background--pressed,
+  $avatar-font-size: null,
+  $avatar-line-height: null,
+  $subheader-color: $cui-list-item__color--subheader,
+  $header-color: $cui-form-control__label
+) {
+  @include flex($jc: flex-start);
+  width: 100%;
+  padding: $padding;
+  height: $height;
+  flex: 1 1 auto;
+  font-size: $cui-list-item__font-size;
+  line-height: $cui-list-item__line-height;
+  position: relative;
+  background-color: $background-color;
+  cursor: pointer;
+  color: $color;
+  white-space: nowrap;
+
+  .#{$cui-list-item__class} {
+    &__left{
+      @include cui-list-item-section(
+        $margin-right: $section-margin
+      );
+
+      >.#{$cui-avatar__class}{
+        @include avatar(
+          $size: $avatar-size,
+          $letter-color: $cui-list-item__avatar__color,
+          $letter-bgrd-color: $cui-list-item__avatar__background-color,
+          $font-size: $avatar-font-size,
+          $line-height: $avatar-line-height
+        );
+      }
+    }
+
+    &__center{
+      @include cui-list-item-section(
+        $order: 1,
+        $flex-grow: 100
+      );
+      @include flex($ai: flex-start, $fd: column);
+      overflow:hidden;
+    }
+
+    &__center-align{
+      @include cui-list-item-section(
+        $order: 1,
+        $flex-grow: 100
+      );
+      @include flex($fd: column);
+      overflow:hidden;
+    }
+
+    &__right{
+      @include cui-list-item-section(
+        $margin-left: $section-margin,
+        $order: 2
+      );
+
+    }
+
+    &__header {
+      color: $header-color;
+    }
+
+    &__subheader {
+      color: $subheader-color;
+      font-size: $cui-list-item__font-size--subheader;
+      line-height: $cui-list-item__line-height--subheader;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+  }
+
+  &:hover:not(.disabled),
+  &.hover:not(:disabled) {
+    background-color: $hover-bgrd-color;
+    color: $color;
+  }
+
+  &:active,
+  &.active {
+    background-color: $active-bgrd-color;
+    color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: inset 0 0 0 $cui-focus__size;
+    color: $color;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: $cui-list-item__opacity--disabled;
+    pointer-events: none;
+  }
+
+  .cui-input-group {
+    margin-bottom: 0; 
+  }
+}
+
+@mixin cui-list-item--dark(
+  $color: $cui-form-control__label--dark,
+  $subheader-color: $cui-list-item__color--subheader--dark,
+  $background-color: $cui-list-item__background--dark,
+  $background-color--hover: $cui-list-item__background--hover--dark,
+  $background-color--active: $cui-list-item__background--pressed--dark
+) {
+  .#{$cui-dark-class} & {
+    color: $color;
+    background-color: $background-color;
+  }
+
+  .#{$cui-list-item__class} {
+    &__header {
+      .#{$cui-dark-class} & {
+        color: $color;
+      }
+    }
+
+    &__subheader {
+      .#{$cui-dark-class} & {
+        color: $subheader-color;
+      }
+    }
+  }
+
+  &:hover:not(.disabled),
+  &.hover:not(:disabled) {
+    .#{$cui-dark-class} & {
+      color: $color;
+      background-color: $background-color--hover;
+    }
+  }
+
+  &:active,
+  &.active {
+    .#{$cui-dark-class} & {
+      color: $color;
+      background-color: $background-color--active;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    .#{$cui-dark-class} & {
+      color: $color;
+    }
+  }
+}

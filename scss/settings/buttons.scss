@@ -1,0 +1,117 @@
+/*
+* @category controls
+* @component button
+* @design collaboration-design
+*/
+
+@import 'core';
+@import 'colors';
+@import '../tools/functions/core';
+
+$cui-button__class: 'cui-button';
+
+// Set font size
+$cui-button__font-size: 1rem;
+
+// Set the border radius for buttons.
+$cui-button__radius: rem-calc(100) !default;
+$cui-button__radius--large: rem-calc(26) !default;
+$cui-button__radius--round: $global-rounded !default;
+
+// Set text alignment
+$cui-button__font-align: center !default;
+
+// Set paddings
+$cui-button__padding--vertical: rem-calc(6) !default;
+$cui-button__padding--horizontal: rem-calc(18) !default;
+$cui_button__padding--vertical--large: rem-calc(14) !default;
+$cui-button__padding--horizontal--large: rem-calc(26) !default;
+
+$cui-button__transition-speed: 150ms;
+
+// Set button font colors
+$cui-button__font-color: $black !default;
+$cui-button__font-color--alt: $white !default;
+
+// Set color, background and cursor for disabled buttons.
+$cui-button__color--disabled: $black-04 !default;
+$cui-button__color--disabled--dark: $white-08 !default;
+$cui-button__font-color--disabled: $black-20 !default;
+$cui-button__font-color--disabled--dark: $white-20 !default;
+$cui-button__cursor--disabled: default !default;
+$cui-button__link-color--disabled: $cui-button__font-color--disabled;
+
+// Default button color settings.
+$cui-button__background-color: $black-12 !default;
+$cui-button__background-color--dark: $white-24 !default;
+$cui-button__background-color--hover: $black-16 !default;
+$cui-button__background-color--hover--dark: $white-32 !default;
+$cui-button__background-color--focus: $black-12 !default;
+$cui-button__background-color--focus--dark: $white-24 !default;
+$cui-button__background-color--active: $black-20 !default;
+$cui-button__background-color--active--dark: $white-40 !default;
+$cui-button__border-color: null !default;
+$cui-button__border-color--focus: $black !default;
+
+// Blue button colors
+$cui-button--blue__backround-color: $blue-base !default;
+$cui-button--blue__backround-color--hover: $blue-hover !default;
+$cui-button--blue__backround-color--focus: $blue-base !default;
+$cui-button--blue__backround-color--active: $blue-press !default;
+$cui-button--blue__border-color: null !default;
+
+// Red button colors
+$cui-button--red__backround-color: $red-base !default;
+$cui-button--red__backround-color--hover: $red-hover !default;
+$cui-button--red__backround-color--focus: $red-base !default;
+$cui-button--red__backround-color--active: $red-press !default;
+$cui-button--red__border-color: null !default;
+
+// Green button colors
+$cui-button--green__backround-color: $green-base !default;
+$cui-button--green__backround-color--hover: $green-hover !default;
+$cui-button--green__backround-color--focus: $green-base !default;
+$cui-button--green__backround-color--active: $green-press !default;
+$cui-button--green__border-color: null !default;
+
+// Orange button colors
+$cui-button--orange__backround-color: $orange-base !default;
+$cui-button--orange__backround-color--hover: $orange-hover !default;
+$cui-button--orange__backround-color--focus: $orange-base !default;
+$cui-button--orange__backround-color--active: $orange-press !default;
+$cui-button--orange__border-color: null !default;
+
+// Yellow button colors
+$cui-button--yellow__backround-color: $yellow-base !default;
+$cui-button--yellow__backround-color--hover: $yellow-hover !default;
+$cui-button--yellow__backround-color--focus: $yellow-base !default;
+$cui-button--yellow__backround-color--active: $yellow-press !default;
+$cui-button--yellow__border-color: null !default;
+
+// Mint button colors
+$cui-button--mint__backround-color: $mint-base !default;
+$cui-button--mint__backround-color--hover: $mint-hover !default;
+$cui-button--mint__backround-color--focus: $mint-base !default;
+$cui-button--mint__backround-color--active: $mint-press !default;
+$cui-button--mint__border-color: null !default;
+
+// Purple button colors
+$cui-button--purple__backround-color: $purple-base !default;
+$cui-button--purple__backround-color--hover: $purple-hover !default;
+$cui-button--purple__backround-color--focus: $purple-base !default;
+$cui-button--purple__backround-color--active: $purple-press !default;
+$cui-button--purple__border-color: null !default;
+
+// Pink button colors
+$cui-button--pink__backround-color: $pink-base !default;
+$cui-button--pink__backround-color--hover: $pink-hover !default;
+$cui-button--pink__backround-color--focus: $pink-base !default;
+$cui-button--pink__backround-color--active: $pink-press !default;
+$cui-button--pink__border-color: null !default;
+
+// Cyan button colors
+$cui-button--cyan__backround-color: $cyan-base !default;
+$cui-button--cyan__backround-color--hover: $cyan-hover !default;
+$cui-button--cyan__backround-color--focus: $cyan-base !default;
+$cui-button--cyan__backround-color--active: $cyan-press !default;
+$cui-button--cyan__border-color: null !default;

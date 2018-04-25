@@ -1,0 +1,24 @@
+/**
+* @name Label
+* @description We set out to create an easy, powerful and versatile form layout system. A combination of form styles and the layout-grid means you can do almost anything.
+* @category controls
+* @component label
+* @design collaboration-design
+*/
+
+@import '../tools/functions/core';
+
+@import 'colors';
+@import 'core';
+@import 'fonts';
+
+$cui-label__class: '#{$cui}-label';
+
+$cui-label--font-family: $brand-font-cisco-TT-Regular !default;
+$cui-label--font-size: rem-calc(16) !default;
+$cui-label--font-color: $black !default;
+$cui-label--font-color--dark: $white !default;
+$cui-label--font-color--disabled: $black-20 !default;
+$cui-label--font-color--disabled--dark: $white-20 !default;
+
+$cui-label--line-height: rem-calc(24) !default;

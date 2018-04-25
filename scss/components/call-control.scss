@@ -1,0 +1,36 @@
+/*
+* @category controls
+* @component call-control
+* @design collaboration-design
+*/
+
+@import '../settings/buttons';
+@import '../tools/mixins/buttons';
+
+@include exports('cui-call-control') {
+  .cui-call-control {
+    @include cui-button-style($color: $cui-button__font-color--alt, $bg: $gray-1, $bg-hover: $gray-3, $bg-active: $cui-button--blue__backround-color, $radius: $cui-button__radius--round);
+    @include cui_button-focus($bg-focus: $gray-3);
+    width: rem-calc(56);
+    height: rem-calc(56);
+    min-width: initial;
+    padding: 0;
+    font-size: rem-calc(24);
+
+    > span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--active {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--blue__backround-color, $bg-hover: $cui-button--blue__backround-color--hover, $bg-active: $cui-button--blue__backround-color--active, $border-color: $cui-button--blue__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--blue__backround-color--focus);
+    }
+
+    &--cancel {
+      @include cui-button-style($color: $cui-button__font-color--alt, $bg: $cui-button--red__backround-color, $bg-hover: $cui-button--red__backround-color--hover, $bg-active: $cui-button--red__backround-color--active, $border-color: $cui-button--red__border-color);
+      @include cui_button-focus($bg-focus: $cui-button--red__backround-color--focus);
+    }
+  }
+}

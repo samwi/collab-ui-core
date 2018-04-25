@@ -1,0 +1,97 @@
+@import '../../settings/core';
+@import '../../settings/toggle-switch';
+@import '../../settings/focus';
+@import '../../settings/form-controls';
+
+@mixin cui-toggle-switch-color(
+  $border-color: $cui-form-control__background-border--focus,
+  $background-color: $cui-form-control__background,
+  $background-color--hover: $cui-form-control__background--hover,
+  $background-color--checked: $cui-form-control__background--checked,
+  $background-color--checked-hover: $cui-form-control__background--checked-hover,
+  $label-color: $cui-form-control__label
+) {
+
+  .#{$cui-toggle-switch__class}__input {
+    + .#{$cui-toggle-switch__class}__label {
+      
+      .#{$cui-toggle-switch__class}__label__container {
+        background-color: $background-color;
+      }
+
+      .#{$cui-toggle-switch__class}__label__text {
+        color: $label-color;
+      }
+
+      &:hover,
+      &.hover {
+        > .#{$cui-toggle-switch__class}__label__container {
+          background-color: $background-color--hover;
+        }
+      }
+    }
+
+    &:focus,
+    &.focus {
+      + .#{$cui-toggle-switch__class}__label {
+        > .#{$cui-toggle-switch__class}__label__container {
+          box-shadow: none;
+          border: $cui-focus__size solid $border-color;
+        }
+      }
+    }
+
+    // Checked
+
+    &:checked,
+    &:indeterminate,
+    &.indeterminate {
+      + .#{$cui-toggle-switch__class}__label {
+        > .#{$cui-toggle-switch__class}__label__container {
+          background-color: $background-color--checked;
+        }
+
+        &:hover,
+        &.hover {
+          > .#{$cui-toggle-switch__class}__label__container {
+            background-color: $background-color--checked-hover;
+          }
+        }
+      }
+    }
+
+    // Disabled Settings
+
+    &:disabled,
+    &.disabled {
+      + .#{$cui-toggle-switch__class}__label {
+
+        &:hover,
+        &.hover {
+          > .#{$cui-toggle-switch__class}__label__container {
+            background-color: $background-color;
+          }
+        }
+      }
+
+      //--> Disabled--Checked/Indeterminate
+
+      &:checked,
+      &:indeterminate,
+      &.indeterminate {
+        + .#{$cui-toggle-switch__class}__label {
+          > .#{$cui-toggle-switch__class}__label__container {
+            background-color: $background-color--checked;
+          }
+
+          &:hover,
+          &.hover {
+            > .#{$cui-toggle-switch__class}__label__container {
+              background-color: $background-color--checked;
+            }
+          }
+        }
+      }
+    }
+  }
+}

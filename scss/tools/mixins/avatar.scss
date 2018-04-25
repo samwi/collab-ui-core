@@ -1,0 +1,70 @@
+@import 'core';
+@import 'border-radius';
+@import 'flex';
+@import 'vendor-prefixes';
+
+@import '../../settings/avatar';
+@import '../../settings/colors';
+@import '../../settings/core';
+
+@mixin avatar(
+  $size: $cui-avatar--size,
+  $color: $white,
+  $font-family: $brand-font-extra-light,
+  $font-size:$cui-avatar__font-size,
+  $line-height:$cui-avatar__line-height,
+  $letter-color: $gray-1,
+  $letter-bgrd-color: $gray
+) {
+  @include border-radius(50%);
+  @include flex();
+  user-select: none;
+  position: relative;
+  box-sizing: border-box;
+  width: $size;
+  height: $size;
+  // min-width: $size; TODO: (pajeter) update to min avatar size when we get specs
+  // min-height: $size;
+  background-size: cover;
+  line-height: $size - rem-calc(2px);
+  vertical-align: middle;
+  z-index:1;
+  color: $color;
+  text-align:center;
+  text-transform: uppercase;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+
+  .#{cui}-avatar__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .#{cui}-avatar__letter {
+    @include flex();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    color: $letter-color;
+    background-color: $letter-bgrd-color;
+  }
+
+  .#{cui}-avatar__icon {
+    font-size: 20px;
+  }
+
+  .#{cui}-avatar--hidden {
+    visibility: hidden;
+  }
+}

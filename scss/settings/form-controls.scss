@@ -1,0 +1,39 @@
+/**
+* @name Input
+* @description We set out to create an easy, powerful and versatile form layout system. A combination of form styles and the layout-grid means you can do almost anything.
+* @category controls
+* @component input
+* @design collaboration-design
+*/
+
+@import 'colors';
+
+$black-16: rgba($black, .16);
+$black-32: rgba($black, .32);
+$white-48: rgba($white, .48);
+$white-64: rgba($white, .64);
+$white-80: rgba($white, .80);
+
+$cui-form-control__opacity--disabled: .4;
+
+$cui-form-control__content: $white !default;
+
+$cui-form-control__label: $black !default;
+$cui-form-control__label--dark: $white !default;
+
+$cui-form-control__background-border--focus: $black !default;
+$cui-form-control__background-border--focus--dark: $white !default;
+
+$cui-form-control__background: $black-16 !default;
+$cui-form-control__background--dark: $white-48 !default;
+$cui-form-control__background--hover: $black-24 !default;
+$cui-form-control__background--hover--dark: $white-64 !default;
+$cui-form-control__background--pressed: $black-32 !default;
+$cui-form-control__background--pressed--dark: $white-80 !default;
+
+$cui-form-control__background--checked: $blue-base !default;
+$cui-form-control__background--checked--dark: $blue-press !default;
+$cui-form-control__background--checked-hover: $blue-hover !default;
+$cui-form-control__background--checked-hover--dark: $blue-dark-hover !default;
+$cui-form-control__background--checked-pressed: $blue-press !default;
+$cui-form-control__background--checked-pressed--dark: $blue-dark-press !default;
