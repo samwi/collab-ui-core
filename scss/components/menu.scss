@@ -15,11 +15,37 @@
     .#{$list-item__class} {
       width: $menu-item__width;
       height: $menu-item__height;
+      padding: 0 $menu-item__padding 0 $menu-item__padding;
     }
 
     .#{$list-item__class}:first-of-type,
     .#{$list-item__class}:last-of-type {
       border-radius: 0;
+    }
+
+    .#{$menu-item__class} {
+      &__content {
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &__selected-value {
+        opacity: $menu-item-selected-value__opacity;
+        font-size: $menu-item-selected-value__font-size;
+        max-width: $menu-item-selected-value__max-width;
+        white-space: pre-line;
+        text-align: right;
+        line-height: $menu-item-selected-value__line-height;
+        padding: $menu-item-selected-value__padding;
+        max-height: 100%;
+        overflow: hidden;
+      }
+
+      &__arrow {
+        display: flex;
+        padding-left: $menu-item-arrow__padding-left;
+      }
     }
 
     .#{$list-item__class}--read-only {
